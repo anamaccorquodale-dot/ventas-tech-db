@@ -1,0 +1,2 @@
+# ventas-tech-db
+Ventassql
