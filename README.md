@@ -19,13 +19,18 @@ La base Ventas_Tech_DB contiene cuatro tablas:
 
 Las tablas se vinculan mediante claves primarias (PRIMARY KEY) y claves foráneas (FOREIGN KEY).
 
+
+
 Cómo ejecutar el proyecto
 
 1. Abrir SQL Server Management Studio (SSMS).
 2. Conectarse al servidor SQL Server.
-3. Abrir el archivo ventas_tech_db.sql.
-4. Ejecutar el script completo.
-5. Verificar los resultados de las consultas de validación.
+3. Abrir el archivo VENTAS_TECH_DB.SQL y ejecutarlo para crear la base de datos, las tablas y cargar los registros.
+4. Ejecutar m4_consultas_negocio.sql para realizar las consultas comerciales del módulo 4.
+5. Ejecutar m5_consultas_joins.sql para realizar las consultas del módulo 5 utilizando INNER JOIN, LEFT JOIN y UNION ALL.
+6. Verificar los resultados obtenidos.
+
+Nota: Las consultas de clientes y productos sin ventas pueden devolver resultados vacíos porque todos los registros de ejemplo tienen ventas asociadas.
 
 Contenido del script
 
