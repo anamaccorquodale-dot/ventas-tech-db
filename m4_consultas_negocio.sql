@@ -52,18 +52,18 @@ ORDER BY mes;
 /*
 HALLAZGOS DE NEGOCIO
 
-1. La facturación total del período analizado fue de $5.119,
-   correspondiente a 10 pedidos, con un ticket promedio de $511,90.
+1. La facturación total del período analizado fue de $6444,
+   correspondiente a 10 pedidos, con un ticket promedio de $644,40.
 
 2. El producto con ID 1 fue el de mayor facturación, generando $3.600
-   con 3 unidades vendidas. Representa aproximadamente el 70,3%
+   con 3 unidades vendidas. Representa aproximadamente el 55,87%
    de la facturación total.
 
 3. Todos los clientes analizados realizaron más de un pedido.
-   El cliente con ID 1 fue el de mayor gasto, con $2.900 en 3 pedidos,
-   representando aproximadamente el 56,7% de la facturación total.
+   El cliente con ID 1 fue el de mayor gasto, con $2.640 en 2 pedidos,
+   representando aproximadamente el 40,97% de la facturación total.
 
 Nota: la base contiene ventas únicamente del mes 3 (marzo).
 Por este motivo no es posible realizar una comparación real entre meses.
-La facturación de marzo ($5.119) coincide con el promedio mensual.
+La facturación de marzo ($6444) coincide con el promedio mensual.
 */
