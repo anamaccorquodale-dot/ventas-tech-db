@@ -1,0 +1,70 @@
+USE Ventas_Tech_DB;
+GO
+
+-- MODULO 5: CONSULTAS CON JOINS Y UNION ALL
+
+-- CONSULTA 1: Detalle de ventas con clientes y productos
+SELECT
+    v.id_venta,
+    v.fecha_venta,
+    c.id_cliente,
+    c.nombre AS nombre_cliente,
+    p.id_producto,
+    p.nombre_producto,
+    p.id_categoria,
+    v.cantidad,
+    v.precio_unitario,
+    v.cantidad * v.precio_unitario AS total_venta
+FROM ventas v
+INNER JOIN clientes c
+    ON v.id_cliente = c.id_cliente
+INNER JOIN productos p
+    ON v.id_producto = p.id_producto;
+
+
+-- CONSULTA 2: Clientes sin ventas
+SELECT
+    c.id_cliente,
+    c.nombre AS nombre_cliente,
+    c.email,
+    c.fecha_registro
+FROM clientes c
+LEFT JOIN ventas v
+    ON c.id_cliente = v.id_cliente
+WHERE v.id_venta IS NULL;
+
+
+-- CONSULTA 3: Productos sin ventas
+SELECT
+    p.id_producto,
+    p.nombre_producto,
+    cat.nombre_categoria,
+    p.precio
+FROM productos p
+LEFT JOIN categorias cat
+    ON p.id_categoria = cat.id_categoria
+LEFT JOIN ventas v
+    ON p.id_producto = v.id_producto
+WHERE v.id_venta IS NULL;
+
+
+-- CONSULTA 4: Ventas por semestre con UNION ALL
+SELECT
+    canal,
+    SUM(total) AS total_canal
+FROM (
+    SELECT
+        cantidad * precio_unitario AS total,
+        'Primer semestre' AS canal
+    FROM ventas
+    WHERE MONTH(fecha_venta) <= 6
+
+    UNION ALL
+
+    SELECT
+        cantidad * precio_unitario AS total,
+        'Segundo semestre' AS canal
+    FROM ventas
+    WHERE MONTH(fecha_venta) > 6
+) AS consolidado
+GROUP BY canal;
